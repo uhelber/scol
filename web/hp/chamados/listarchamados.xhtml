@@ -28,11 +28,11 @@
             <h:commandButton value="Usuários" action="listarusuarios" rendered="#{not empty gerenciadorBean.listarTodosUsuarios()}" />
             
             
-            <h:dataTable var="chamado" value="#{gerenciadorBean.listarTodosChamados()}" rendered="#{not empty gerenciadorBean.listarTodosChamados()}" width="100%" 
+            <h:dataTable var="chamado" value="#{scolBean.listarChamados()}" rendered="#{not empty scolBean.listarChamados()}" width="100%" 
                          styleClass="grid" headerClass="cabecalho" rowClasses="cor-sim, cor-nao"
                          columnClasses="tipo, chamado, tecnico, escola, status, cidade, bairro, contato, telefone, dataabertura, descricao, editar">
                 <h:column >
-                    <h:graphicImage value="#{chamado.imagem}" />
+                    <h:graphicImage value="#{chamado.status.imagem}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header" >
@@ -80,7 +80,8 @@
                     <f:facet name="header" >
                         <h:outputText value="Telefone" />
                     </f:facet>
-                    <h:outputText value="#{chamado.telefone} / #{chamado.telefone2}" />
+                    <h:outputText value="#{chamado.telefone}" />
+                    <h:outputText value=" / #{chamado.telefone2}" rendered="#{chamado.telefone2}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header" >

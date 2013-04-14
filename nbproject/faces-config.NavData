@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="hp/chamados/verificarinep.xhtml" x="54" y="149" zoom="true"/>
+        <Node id="hp/usuarios/editarusuario.xhtml" x="431" y="156" zoom="true"/>
+        <Node id="hp/chamados/chamadosfinalizados.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="hp/chamados/listarchamados.xhtml" x="53" y="115" zoom="true"/>
+        <Node id="index.xhtml" x="370" y="36" zoom="true"/>
+        <Node id="hp/usuarios/listarusuarios.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="hp/usuarios/perfilusuario.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="hp/usuarios/cadastrarusuario.xhtml" x="411" y="116" zoom="true"/>
+        <Node id="hp/chamados/editarchamado.xhtml" x="60" y="228" zoom="true"/>
+        <Node id="hp/chamados/cadastrarchamado.xhtml" x="51" y="189" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

@@ -5,6 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>CAC - Controle de Abertura de Chamado</title>
+        <link rel="shortcut icon" href="/imagens/favicon.ico" />
         <h:outputStylesheet library="css" name="sistema.css" />
     </h:head>
     <h:body>
@@ -18,17 +19,17 @@
 
                 <h:outputLabel value="Usuário: " for="usuario" />
                 <h:panelGroup>
-                    <h:inputText id="usuario" size="30" value="#{gerenciadorBean.usuarioLogado.usuario}" />
+                    <h:inputText id="usuario" size="30" value="#{scolBean.usuarioLogin.usuario}" />
                     <h:message for="usuario" style="color: red; font-weight: bold" />
                 </h:panelGroup>
 
                 <h:outputLabel value="Senha: " for="senha" />
                 <h:panelGroup>
-                    <h:inputSecret id="senha" size="30" value="#{gerenciadorBean.usuarioLogado.senha}" />
+                    <h:inputSecret id="senha" size="30" value="#{scolBean.usuarioLogin.senha}" />
                     <h:message for="senha" style="color: red; font-weight: bold" />
                 </h:panelGroup>
 
-                <h:commandButton value="Entrar" action="#{gerenciadorBean.validarUsuario()}" />
+                <h:commandButton value="Entrar"  />
                 <h:commandButton value="Limpar" />
             </h:panelGrid>
         </h:form>
