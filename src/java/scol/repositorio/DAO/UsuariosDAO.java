@@ -7,7 +7,6 @@ package scol.repositorio.DAO;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
-import scol.db.FabricaDeSessao;
 import scol.mapeamento.Login;
 import scol.mapeamento.Usuario;
 import scol.repositorio.Usuarios;

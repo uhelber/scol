@@ -28,7 +28,7 @@ public class Teste {
             login.setUsuario("uhelber");
             login.setSenha("lcosta");
             Usuarios usuarios = new UsuariosDAO(sessao);
-            List<Usuario> tecnicos = usuarios.todosSemPermissao();
+            List<Usuario> tecnicos = usuarios.todosTecnicos();
             //Usuario usuario = (Usuario) sesessao.createQuery("select usr from Usuario usr where usr.login.usuario = :nome and usr.login.senha = :senha").setString("nome", login.getUsuario()).setString("senha", login.getSenha()).uniqueResult();
             /*Usuario usuario = usuarios.validar(login);
             

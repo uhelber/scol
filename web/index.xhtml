@@ -10,8 +10,8 @@
     </h:head>
     <h:body>
         <h:form id="frm">
-            <h1><h:messages layout="table" /></h1>
-            <br/>
+            <h2><h:messages layout="table" showDetail="false" showSummary="true" styleClass="form-messages" errorClass="error"
+                            infoClass="info" /></h2>
             <h:panelGrid columns="2" styleClass="form-grid" columnClasses="label, campo">
                 <h:outputLabel id="aviso" for="aviso" />
                 <h:message for="aviso" style="color: red; font-weight: bold"  />
@@ -29,7 +29,7 @@
                     <h:message for="senha" style="color: red; font-weight: bold" />
                 </h:panelGroup>
 
-                <h:commandButton value="Entrar"  />
+                <h:commandButton value="Entrar" action="#{scolBean.validarUsuario()}" />
                 <h:commandButton value="Limpar" />
             </h:panelGrid>
         </h:form>

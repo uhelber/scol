@@ -16,7 +16,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public class FabricaDeSessao {
 
-    private static final SessionFactory fabricaSessao;
+    private static SessionFactory fabricaSessao;
 
     static {
         try {
