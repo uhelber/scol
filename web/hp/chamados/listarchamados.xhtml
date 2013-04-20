@@ -14,18 +14,18 @@
 
         <h:form id="frm">
             <h:panelGroup class="usr">
-                <h:commandButton image="/imagens/sair2.png" action="#{gerenciadorBean.sair()}" />
-                <h:outputText value="#{gerenciadorBean.usuarioLogado.nome} #{gerenciadorBean.usuarioLogado.sobrenome}" />
+                <h:commandButton image="/imagens/sair2.png"  />
+                <h:outputText value="#{scolBean.usuario.nome} #{scolBean.usuario}" />
             </h:panelGroup>
             <br/>
             <br/>
             <br/>
-            <h:commandButton value="Novo Chamado" action="#{gerenciadorBean.irVerificarINEP()}" />
+            <h:commandButton value="Novo Chamado" action="#{scolBean.irVerificarINEP()}" />
             <h:commandButton value="Chamados Finalizados" action="chamadosfinalizados" />
             <h:commandButton value="Perfil" action="perfilusuario" >
-                <f:setPropertyActionListener value="#{gerenciadorBean.usuarioLogado}" target="#{gerenciadorBean.novoUsuario}" />
+                <f:setPropertyActionListener value="#{scolBean.usuarioLogado}" target="#{scolBean.novoUsuario}" />
             </h:commandButton>
-            <h:commandButton value="Usuários" action="listarusuarios" rendered="#{not empty gerenciadorBean.listarTodosUsuarios()}" />
+            <h:commandButton value="Usuários" action="listarusuarios" rendered="#{not empty scolBean.listarTodosUsuarios()}" />
             
             
             <h:dataTable var="chamado" value="#{scolBean.listarChamados()}" rendered="#{not empty scolBean.listarChamados()}" width="100%" 

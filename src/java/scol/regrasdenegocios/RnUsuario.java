@@ -4,6 +4,7 @@
  */
 package scol.regrasdenegocios;
 
+import java.util.List;
 import org.hibernate.Session;
 import scol.db.RecuperarAtributo;
 import scol.mapeamento.Login;
@@ -31,9 +32,52 @@ public class RnUsuario {
     }
 
     public Usuario autorizar(Usuario usuario) throws RnExcessoes {
+        Usuario u = null;
         if (usuario.getAtivarconta().getIdativarconta() == 1) {
             throw new RnExcessoes("Usuário está bloqueado pelo Administrador");
+        } else {
+            u = usuario;
         }
-        return usuario;
+        return u;
+    }
+
+    public List<Usuario> todos(Usuario u) {
+        Usuarios usuarios = null;
+        if (u != null) {
+            usuarios = new UsuariosDAO(this.sessao);
+        }
+        return usuarios.todos();
+    }
+
+    public List<Usuario> todosSemPermissao(Usuario u) {
+        Usuarios usuarios = null;
+        if (u != null) {
+            usuarios = new UsuariosDAO(this.sessao);
+        }
+        return usuarios.todosSemPermissao();
+    }
+
+    public List<Usuario> todosTecnicos(Usuario u) {
+        Usuarios usuarios = null;
+        if (u != null) {
+            usuarios = new UsuariosDAO(this.sessao);
+        }
+        return usuarios.todosTecnicos();
+    }
+
+    public List<Usuario> todosAdministradores(Usuario u) {
+        Usuarios usuarios = null;
+        if (u != null) {
+            usuarios = new UsuariosDAO(this.sessao);
+        }
+        return usuarios.todosAdministradores();
+    }
+    
+    public void cadastrar(Usuario usuarioLogado, Usuario novoUsuario) throws RnExcessoes{
+        Usuarios usuarios = new UsuariosDAO(this.sessao);
+        if(usuarioLogado != null){
+            usuarios.cadastrar(novoUsuario);
+            throw new RnExcessoes("Usuário cadastrado com sucesso...");
+        }
     }
 }

@@ -32,7 +32,7 @@ public class UsuariosDAO implements Usuarios{
     
     @Override
     public List<Usuario> todosSemPermissao() {
-        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao = :permissao")
+        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao = :permissao order by usr.nome")
                 .setInteger("permissao", 1)
                 .list();
         return usuarios;
@@ -40,7 +40,7 @@ public class UsuariosDAO implements Usuarios{
     
     @Override
     public List<Usuario> todosTecnicos() {
-        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao != :permissao")
+        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao != :permissao order by usr.nome")
                 .setInteger("permissao", 1)
                 .list();
         return usuarios;
@@ -48,7 +48,7 @@ public class UsuariosDAO implements Usuarios{
 
     @Override
     public List<Usuario> todosAdministradores() {
-        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao = :permissao")
+        List<Usuario> usuarios = this.sessao.createQuery("select usr from Usuario usr where usr.permissao.idpermissao = :permissao order by usr.nome")
                 .setInteger("permissao", 3)
                 .list();
         return usuarios;
@@ -67,6 +67,16 @@ public class UsuariosDAO implements Usuarios{
                 .setString("senha", login.getSenha())
                 .uniqueResult();
         return usuario;
+    }
+
+    @Override
+    public void cadastrar(Usuario usuario) {
+        this.sessao.merge(usuario);
+    }
+
+    @Override
+    public void editar(Usuario usuario) {
+        this.sessao.merge(usuario);
     }
 
 }

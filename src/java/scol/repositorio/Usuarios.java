@@ -20,4 +20,6 @@ public interface Usuarios {
     public List<Usuario> todosAdministradores();
     public Usuario porId(Integer id);
     public Usuario validar(Login login);
+    public void cadastrar(Usuario usuario);
+    public void editar(Usuario usuario);
 }
