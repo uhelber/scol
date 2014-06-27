@@ -48,12 +48,12 @@ public class ScolBean implements Serializable {
     public ScolBean() {
     }
 
-    public Login getUsuarioLogin() {
+    public Login getLogin() {
         return login;
     }
 
-    public void setUsuarioLogin(Login usuarioLogin) {
-        this.login = usuarioLogin;
+    public void setLogin(Login login) {
+        this.login = login;
     }
 
     public Usuario getUsuario() {

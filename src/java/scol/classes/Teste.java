@@ -28,24 +28,21 @@ public class Teste {
 
         try {
             Login login = new Login();
-            login.setUsuario("uhelber");
-            login.setSenha("lcsta");
+            login.setUsuario("admin");
+            login.setSenha("admin");
             Usuarios usuarios = new UsuariosDAO(sessao);
             Chamados chamados = new ChamadosDAO(sessao);
             List<Usuario> tecnicos = usuarios.todos();
             List<Chamado> chmd = chamados.todosPrioridades();
             //Usuario usuario = (Usuario) sesessao.createQuery("select usr from Usuario usr where usr.login.usuario = :nome and usr.login.senha = :senha").setString("nome", login.getUsuario()).setString("senha", login.getSenha()).uniqueResult();
-            /*Usuario usuario = usuarios.validar(login);
+            Usuario usuario = usuarios.validar(login);
             
             if(usuario != null){
                 System.out.println("\n\n\n"+usuario.getNome() + " " + usuario.getSobrenome());
             }else{
                 System.out.println("\n\n\nUsuário não encontrado...");
             }
-            */
-            for(Chamado u : chmd){
-                System.out.println(u.getStatus().getNome()+ "-"+ u.getEscola().getNome());
-            }
+            
             
         } catch (Exception e) {
             System.out.println(e);

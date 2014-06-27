@@ -62,7 +62,7 @@ public class UsuariosDAO implements Usuarios{
 
     @Override
     public Usuario validar(Login login) {
-        Usuario usuario = (Usuario) this.sessao.createQuery("select usr from Usuario usr where usr.login.usuario = :usuario and usr.login.senha = :senha")
+        Usuario usuario = (Usuario) this.sessao.createQuery("SELECT usr FROM Usuario usr WHERE usr.login.usuario = :usuario AND usr.login.senha = :senha")
                 .setString("usuario", login.getUsuario())
                 .setString("senha", login.getSenha())
                 .uniqueResult();
