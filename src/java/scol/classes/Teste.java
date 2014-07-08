@@ -28,8 +28,8 @@ public class Teste {
 
         try {
             Login login = new Login();
-            login.setUsuario("admin");
-            login.setSenha("admin");
+            login.setUsuario("uhelber");
+            login.setSenha("lcosta");
             Usuarios usuarios = new UsuariosDAO(sessao);
             Chamados chamados = new ChamadosDAO(sessao);
             List<Usuario> tecnicos = usuarios.todos();

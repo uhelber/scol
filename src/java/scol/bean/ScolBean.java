@@ -80,6 +80,7 @@ public class ScolBean implements Serializable {
     public String validarUsuario() throws RnExcessoes {
         RnUsuario rnUsuario = new RnUsuario();
         String ir = "";
+             
         try {
             Usuario usuario = rnUsuario.validar(this.login);
             try {

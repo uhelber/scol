@@ -25,6 +25,7 @@ public class RnUsuario {
 
     public Usuario validar(Login login) throws RnExcessoes {
         Usuario usuario = this.usuarios.validar(login);
+        System.out.println(usuario.getSobrenome());
         if (usuario == null) {
             throw new RnExcessoes("Usuário ou senha inválida");
         }
